@@ -57,7 +57,8 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 - Infinite scroll
 - Nested Routing
 - Component library list
-- Husky pre-push hook for tests and linting
-- Read about security against XSS and CSRF attacks
 - React App and API to Azure as CI/CD
 - Translation management tool and Figma
+
+- Husky pre-push hook for tests and linting
+- Read about security against XSS and CSRF attacks
