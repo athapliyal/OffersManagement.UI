@@ -49,13 +49,15 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 
 ### Good to have
 - Animation libraries
-
-### Pending stuff
-- Authentication using http-only cookies on UI and API
-- Animation example
 - Responsiveness
-- Host React project on Azure
-- Presentation slides
+- Animation example
+
+### Pending stuff (in order of importance)
+- Authentication using http-only cookies on UI and API
 - Infinite scroll
+- Nested Routing
+- Component library list
 - Husky pre-push hook for tests and linting
 - Read about security against XSS and CSRF attacks
+- React App and API to Azure as CI/CD
+- Translation management tool and Figma

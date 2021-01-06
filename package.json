@@ -68,6 +68,7 @@
     "@types/react-router-dom": "^5.1.6",
     "cypress": "^6.2.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.0.6",
     "msw": "^0.24.2",
     "source-map-explorer": "^2.5.1",
     "start-server-and-test": "^1.11.7"

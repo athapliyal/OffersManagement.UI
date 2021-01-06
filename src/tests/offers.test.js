@@ -25,7 +25,7 @@ describe("Offers page", () => {
     renderWithRouter(<Offers />);
 
     // Act
-    const heading = await screen.findByText("All Offers");
+    const heading = await screen.findByText("Al Offers");
 
     // Assert
     expect(heading).toBeInTheDocument();
