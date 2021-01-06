@@ -1,11 +1,23 @@
+import axios from 'axios';
 
-export const loginService = async (username: string, password: string) => {
-    // simulate backend request
-    var request = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('done');
-        }, 500)
-    })
+import { LoginModel } from '../models/LoginModel';
+import { LOGIN_URL } from './service-constants';
 
-    return request;
+const login = async (credentials: LoginModel) => {   
+
+    let axiosConfig = {
+        headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+        },
+        withCredentials: true
+    };
+
+    const res = await axios.post(LOGIN_URL, credentials, axiosConfig)
+
+    return res;
+}
+
+export const loginService = {
+    login
 }

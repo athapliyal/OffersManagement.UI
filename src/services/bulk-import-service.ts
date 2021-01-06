@@ -10,8 +10,10 @@ const uploadBulkImportFile = async (file: File) => {
         let res = await axios.post(`${BASE_CCC_API_URL}/bulkimport/offers`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
-            }
+            },
+            withCredentials: true
         });
+
         return res;
     }
     catch (err) {

@@ -8,6 +8,7 @@ import { LoginFormErrors } from "./LoginFormErrors";
 import { AuthContext, SET_IS_AUTHENTICATED_SUCCESS } from "../../store/authentication";
 
 import { loginService } from "../../services/login-service";
+import { LoginModel } from "../../models/LoginModel";
 
 type LoginFormData = {
   username: string;
@@ -20,8 +21,14 @@ export const LoginForm: React.FC = () => {
 
   const { register, setValue, handleSubmit, errors } = useForm<LoginFormData>();
 
-  const onSubmit = handleSubmit(({ username, password }) => {    
-    loginService(username, password)
+  const onSubmit = handleSubmit(({ username, password }) => {
+
+    const credentials: LoginModel = {
+      username,
+      password
+    }
+
+    loginService.login(credentials)
       .then(() => {
         authContext.dispatch({ type: SET_IS_AUTHENTICATED_SUCCESS, value: { isAuthenticated: true } });
 
@@ -30,7 +37,7 @@ export const LoginForm: React.FC = () => {
       })
       // can show toaster here with an error message
       .catch(() => {
-        console.log("some error");
+        alert("some error");
       });
   });
 
