@@ -48,11 +48,11 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 - React Developer Tools
 
 ### Good to have
-- Animation libraries
 - Responsiveness
 - Animation example
 
 ### Pending stuff (in order of importance)
+- Axios interceptor to clear localStorage on 401
 - Infinite scroll
 - Nested Routing
 - Component library list

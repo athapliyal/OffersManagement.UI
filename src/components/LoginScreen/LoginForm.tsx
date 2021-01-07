@@ -18,6 +18,8 @@ interface LoginFormData {
 export const LoginForm: React.FC = () => {
   const [loginError, setLoginError] = useState<boolean>(false);
   const history = useHistory();
+
+  // We don't need this but we are using to demo global state using hooks
   const authContext = useContext(AuthContext);
 
   const { register, setValue, handleSubmit, errors } = useForm<LoginFormData>();
@@ -32,6 +34,7 @@ export const LoginForm: React.FC = () => {
       .login(credentials)
       .then(() => {
         authContext.dispatch({ type: SET_IS_AUTHENTICATED_SUCCESS, value: { isAuthenticated: true } });
+        localStorage.setItem("isAuthenticated", "true");
 
         // go to home page if authenticated
         history.push("/");
@@ -84,9 +87,5 @@ export const LoginForm: React.FC = () => {
 };
 
 const LoginFailedError: React.FC = () => {
-  return (
-    <Alert variant="danger">
-      Please check your username or password
-    </Alert>
-  );
+  return <Alert variant="danger">Please check your username or password</Alert>;
 };
