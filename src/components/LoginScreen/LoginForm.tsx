@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Button } from "react-bootstrap";
+import React, { useState, useContext } from "react";
+import { Button, Alert } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
@@ -10,34 +10,34 @@ import { AuthContext, SET_IS_AUTHENTICATED_SUCCESS } from "../../store/authentic
 import { loginService } from "../../services/login-service";
 import { LoginModel } from "../../models/LoginModel";
 
-type LoginFormData = {
+interface LoginFormData {
   username: string;
   password: string;
-};
+}
 
 export const LoginForm: React.FC = () => {
+  const [loginError, setLoginError] = useState<boolean>(false);
   const history = useHistory();
   const authContext = useContext(AuthContext);
 
   const { register, setValue, handleSubmit, errors } = useForm<LoginFormData>();
 
   const onSubmit = handleSubmit(({ username, password }) => {
-
     const credentials: LoginModel = {
       username,
-      password
-    }
+      password,
+    };
 
-    loginService.login(credentials)
+    loginService
+      .login(credentials)
       .then(() => {
         authContext.dispatch({ type: SET_IS_AUTHENTICATED_SUCCESS, value: { isAuthenticated: true } });
 
         // go to home page if authenticated
         history.push("/");
       })
-      // can show toaster here with an error message
-      .catch(() => {
-        alert("some error");
+      .catch((err) => {
+        setLoginError(true);
       });
   });
 
@@ -77,7 +77,16 @@ export const LoginForm: React.FC = () => {
           Log in
         </Button>
       </form>
-      <LoginFormErrors errors={errors} />
+      {errors && <LoginFormErrors errors={errors} />}
+      {loginError && <LoginFailedError />}
     </>
+  );
+};
+
+const LoginFailedError: React.FC = () => {
+  return (
+    <Alert variant="danger">
+      Please check your username or password
+    </Alert>
   );
 };
