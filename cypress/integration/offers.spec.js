@@ -2,8 +2,8 @@ describe('Offers page', () => {
     it('should be visible when logged in', () => {
         cy.visit('http://localhost:3000');
 
-        cy.findByLabelText(/Username/i).clear().type('Chuck');
-        cy.findByLabelText(/Password/i).clear().type('Norris');
+        cy.findByLabelText(/Username/i).clear().type('plexure');
+        cy.findByLabelText(/Password/i).clear().type('plexure');
         cy.findByRole('button', { name: /log in/i }).click();
       
         cy.findByText(/All Offers/i, { timeout: 10000 }).should('be.visible');

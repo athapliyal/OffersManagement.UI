@@ -13,8 +13,8 @@ describe('Login page', () => {
     });
 
     it('should take us to offers page when logged in', () => {
-        cy.findByLabelText(/Username/i).clear().type('Chuck');
-        cy.findByLabelText(/Password/i).clear().type('Norris');
+        cy.findByLabelText(/Username/i).clear().type('plexure');
+        cy.findByLabelText(/Password/i).clear().type('plexure');
         cy.findByRole('button', { name: /log in/i }).click();
       
         cy.findByText(/All Offers/i, { timeout: 10000 }).should('be.visible');
