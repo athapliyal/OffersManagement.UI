@@ -53,7 +53,6 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 - Animation example
 
 ### Pending stuff (in order of importance)
-- Authentication using http-only cookies on UI and API
 - Infinite scroll
 - Nested Routing
 - Component library list
