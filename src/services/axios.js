@@ -7,8 +7,10 @@ const axiosInstance = axios.create({
 });
 
 // Response interceptor for API calls
-axios.interceptors.response.use((response) => {
-    return response
+axiosInstance.interceptors.response.use((response) => {
+    // For demo purposes
+    console.log('axios response intercepted');
+    return response;
 }, error => {
     if (error.response.status === 401) {
         // Either log out the user here or use the refresh token to make another call and get a new token
