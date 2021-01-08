@@ -53,5 +53,5 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 
 ### Pending stuff (in order of importance)
 - Infinite scroll
-- React App and API to Azure as CI/CD
+- React App to Azure as CI/CD
 - Translation management tool and Figma
