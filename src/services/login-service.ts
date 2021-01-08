@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { LoginModel } from '../models/LoginModel';
-import { LOGIN_URL } from './service-constants';
 
 const login = async (credentials: LoginModel) => {   
 
@@ -13,7 +12,7 @@ const login = async (credentials: LoginModel) => {
         withCredentials: true
     };
 
-    const res = await axios.post(LOGIN_URL, credentials, axiosConfig)
+    const res = await axios.post('/authorize/login', credentials, axiosConfig)
 
     return res;
 }

@@ -1,10 +1,8 @@
-import axios from 'axios';
+import axios from './axios';
 import { NewOfferModel } from '../models/NewOfferModel';
 
-import { OFFERS_API_URL } from './service-constants';
-
 export const getOffers = async (pageNumber: number, pageSize: number) => {
-    const response = await axios.get(`${OFFERS_API_URL}?PageNumber=${pageNumber}&PageSize=${pageSize}`, {
+    const response = await axios.get(`/offers?PageNumber=${pageNumber}&PageSize=${pageSize}`, {
         withCredentials: true
     });
 
@@ -12,7 +10,7 @@ export const getOffers = async (pageNumber: number, pageSize: number) => {
 }
 
 export const getOffer = async (offerId: string) => {
-    const response = await axios.get(`${OFFERS_API_URL}/${offerId}`, {
+    const response = await axios.get(`/offers/${offerId}`, {
         withCredentials: true
     });
 
@@ -20,7 +18,7 @@ export const getOffer = async (offerId: string) => {
 }
 
 export const deleteOffer = async (id: string) => {
-    const response = await axios.delete(`${OFFERS_API_URL}?id=${id}`, {
+    const response = await axios.delete(`/offers?id=${id}`, {
         withCredentials: true
     });
 
@@ -28,7 +26,7 @@ export const deleteOffer = async (id: string) => {
 }
 
 export const copyOffer = async (id: string) => {
-    const response = await axios.get(`${OFFERS_API_URL}/copyOffer?id=${id}`, {
+    const response = await axios.get(`/offers/copyOffer?id=${id}`, {
         withCredentials: true
     });
 
@@ -54,7 +52,7 @@ export const uploadOffer = async (offer: NewOfferModel) => {
         withCredentials: true
     };
 
-    const response = await axios.post(OFFERS_API_URL, newOffer, axiosConfig)
+    const response = await axios.post('/offers', newOffer, axiosConfig)
 
     return response;
 }
