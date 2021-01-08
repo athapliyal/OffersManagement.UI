@@ -15,6 +15,7 @@ export const Header: React.FC = () => {
 
   const logoutUser = () => {
     dispatch({ type: SET_IS_AUTHENTICATED_FAIL });
+    localStorage.removeItem("isAuthenticated");
   };
 
   if (authState.isAuthenticated) {
@@ -35,7 +36,6 @@ export const Header: React.FC = () => {
             </Nav>
             <Nav>
               <Link className="nav-link" to="/no-where">
-                {" "}
                 <i className="fas fa-dizzy"></i>
               </Link>
               <LanguageDropdown />

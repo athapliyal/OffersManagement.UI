@@ -10,13 +10,13 @@ describe('Offers page', () => {
     });
 
     it('should have the offers table with all the columns', () => {
-        cy.findByText(/title/i).should('be.visible');
-        cy.findByText(/category/i).should('be.visible');
-        cy.findByText(/description/i).should('be.visible');
-        cy.findByText(/start date and time/i).should('be.visible');
-        cy.findByText(/end date and time/i).should('be.visible');
-        cy.findByText(/status/i).should('be.visible');
-        cy.findByText(/actions/i).should('be.visible');
+        cy.findByText("TITLE").should('be.visible');
+        cy.findByText("CATEGORY").should('be.visible');
+        cy.findByText("DESCRIPTION").should('be.visible');
+        cy.findByText("START DATE AND TIME").should('be.visible');
+        cy.findByText("END DATE AND TIME").should('be.visible');
+        cy.findByText("STATUS").should('be.visible');
+        cy.findByText("ACTIONS").should('be.visible');
     });
 
     it('should have new and import offers buttons', () => {
