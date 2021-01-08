@@ -38,6 +38,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "postinstall": "husky install",
     "cypress": "cypress open",
     "cypress:headless": "cypress run --browser chrome --headless",
     "test:e2e": "start-server-and-test start 3000 cypress",
