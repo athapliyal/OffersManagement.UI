@@ -52,7 +52,6 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 - Animation example
 
 ### Pending stuff (in order of importance)
-- Axios interceptor to clear localStorage on 401
 - Infinite scroll
 - React App and API to Azure as CI/CD
 - Translation management tool and Figma
