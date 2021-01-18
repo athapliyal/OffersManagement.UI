@@ -110,7 +110,7 @@ export const InfiniteScroll: React.FC = () => {
   );
 };
 
-// A child component that is rendered on line 100. You can move this to a separate file or keep it here
+// A child component that is rendered on line 107. You can move this to a separate file or keep it here
 const InfinitePreloader: React.FC = () => {
   return (
     <div className="infinite-scroll-preloader">
