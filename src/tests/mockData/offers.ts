@@ -6,8 +6,8 @@ export const GetOffersData: OfferSearchResults = {
         title: "Offer number 1",
         description: "This offer is for a restaurant",
         category: 1,
-        startDate: new Date(2020, 11, 24, 10, 33, 30, 0),
-        endDate: new Date(2020, 12, 25, 10, 33, 30, 0),
+        startDate: "2021-01-12T12:00:00",
+        endDate: "2021-01-25T12:00:00",
         status: 2
     },
     {
@@ -15,8 +15,8 @@ export const GetOffersData: OfferSearchResults = {
         title: "Offer number 2",
         description: "This offer is for clothing",
         category: 2,
-        startDate: new Date(2021, 10, 24, 10, 33, 30, 0),
-        endDate: new Date(2021, 12, 25, 10, 33, 30, 0),
+        startDate: "2021-02-12T12:00:00",
+        endDate: "2021-02-25T12:00:00",
         status: 3
     },
     {
@@ -24,8 +24,8 @@ export const GetOffersData: OfferSearchResults = {
         title: "Offer number 3",
         description: "This offer is for food",
         category: 2,
-        startDate: new Date(2021, 1, 24, 10, 33, 30, 0),
-        endDate: new Date(2021, 2, 25, 10, 33, 30, 0),
+        startDate: "2021-03-12T12:00:00",
+        endDate: "2021-03-25T12:00:00",
         status: 3
     }],
     offersCount: 3

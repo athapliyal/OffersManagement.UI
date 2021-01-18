@@ -52,6 +52,4 @@ Plexure CCC Portal POC using React + Typescript and .NET Core
 - Animation example
 
 ### Pending stuff (in order of importance)
-- Infinite scroll
-- React App to Azure as CI/CD
 - Translation management tool and Figma

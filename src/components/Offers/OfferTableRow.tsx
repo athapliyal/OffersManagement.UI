@@ -1,7 +1,9 @@
 import { useHistory } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
+
 import { Offer, OfferCategory, OfferStatus } from "../../models";
+import { formatDate } from '../../helpers/dates';
 
 interface IOfferTableRowProps {
   offer: Offer;
@@ -19,8 +21,8 @@ export const OfferTableRow: React.FC<IOfferTableRowProps> = (props: IOfferTableR
         <td onClick={() => history.push(`/offers/${offer.id}`)}>{offer.title}</td>
         <td>{OfferCategory[offer.category] || "-"}</td>
         <td>{offer.description}</td>
-        <td>{offer.startDate}</td>
-        <td>{offer.endDate}</td>
+        <td>{formatDate(offer.startDate)}</td>
+        <td>{formatDate(offer.endDate)}</td>
         <td>{OfferStatus[offer.status] || "-"}</td>
         <td>
           <Button variant="primary" value={offer.id} onClick={onCopy}>

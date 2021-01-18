@@ -33,6 +33,14 @@ export const copyOffer = async (id: string) => {
     return response;
 }
 
+export const addMultipleOffersForInfiniteScroll = async () => {
+    const response = await axios.get('/offers/addmultipleoffers', {
+        withCredentials: true
+    });
+
+    return response.data;
+}
+
 export const uploadOffer = async (offer: NewOfferModel) => {
 
     const newOffer: NewOfferModel = {

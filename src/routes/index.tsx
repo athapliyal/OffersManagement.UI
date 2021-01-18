@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { Offers } from "../components/Offers";
 import { OfferDetails } from '../components/Offers/OfferDetails';
 import { NewOffer } from '../components/Offers/NewOffer';
+import { InfiniteScroll } from '../components/Offers/InfiniteScroll';
 import { BulkImportOffer } from "../components/BulkImportOffer";
 import { LoginScreen } from "../components/LoginScreen";
 import { Preloader } from '../components/Preloader';
@@ -51,6 +52,13 @@ export const routes: IRoutes[] = [{
   name: "Importer",
   exact: true,
   component: () => <BulkImportOffer />,
+  isPrivateRoute: true,
+},
+{
+  path: "/infinite-scroll",
+  name: "InfiniteScroll",
+  exact: true,
+  component: () => <InfiniteScroll />,
   isPrivateRoute: true,
 },
 {

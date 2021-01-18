@@ -2,8 +2,8 @@ export interface Offer {
     id: string,
     title: string,
     description: string,
-    startDate: Date,
-    endDate: Date,
+    startDate: string,
+    endDate: string,
     category: OfferCategory,
     status: OfferStatus
 }

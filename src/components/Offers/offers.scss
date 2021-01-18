@@ -35,8 +35,7 @@
 .pagination-wrapper {
     width: 80%;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: 0 auto;
     margin-top: 2em;
 }
@@ -101,4 +100,20 @@
             color: white;
         }
     }
+}
+
+.infinite-scroll-wrapper {
+    .infinite-scroll-header {
+        @include header-styles;
+
+        .infinite-scroll-header-content {
+            @include header-content-styles;
+        }
+    }
+
+    .infinite-scroll-table, .infinite-scroll-preloader {
+        width: 80%;
+        margin: 0.5em auto;
+    }
+    
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 
+import Button from 'react-bootstrap/Button';
 import { ToastContainer } from "react-toastify";
+
+import { OfferTableHeader } from "./OfferTableHeader";
 
 import { Preloader } from "../Preloader";
 import { MAX_PAGE_SIZE, Pagination } from "../Pagination";
@@ -18,6 +21,7 @@ import {
 } from "../../notifications/toast-config";
 
 import "./offers.scss";
+import { Link } from "react-router-dom";
 
 export const Offers: React.FC = () => {
   const [offerSearch, setOfferSearch] = useState<OfferSearchResults>();
@@ -30,16 +34,16 @@ export const Offers: React.FC = () => {
     getOffers(currentPage, MAX_PAGE_SIZE).then((offerSearch) => {
 
       // only set state if component is mounted
-      if (mountedRef.current) {        
+      if (mountedRef.current) {
         setOfferSearch(offerSearch);
       }
-      
+
     });
   }, [currentPage]);
 
   useEffect(() => {
     mountedRef.current = true;
-    
+
     retrieveOffers();
 
     //component unmount
@@ -105,12 +109,16 @@ export const Offers: React.FC = () => {
   if (offerSearch?.offersCount) {
     return (
       <>
-        <ToastContainer />
         {showModal && <GenericModal {...modalProps} />}
+        <ToastContainer />
         <div className="offers-table-wrapper">
+          <OfferTableHeader />
           <OffersTableBody offersList={offerSearch?.offers} onCopy={onCopy} onDelete={onDelete} />
         </div>
         <div className="pagination-wrapper">
+          <Link to="/infinite-scroll">
+            <Button variant="primary">List offers</Button>
+          </Link>
           <Pagination
             totalCount={offerSearch?.offersCount || 0}
             currentPage={currentPage}

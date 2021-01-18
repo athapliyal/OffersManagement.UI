@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 
 import Table from "react-bootstrap/Table";
 
-import { OfferTableHeader } from "./OfferTableHeader";
 import { OfferTableRow } from "./OfferTableRow";
 
 import { OFFER_TABLE_HEADERS } from "./offers-constants";
@@ -19,7 +18,6 @@ export const OffersTableBody: React.FC<IOffersTableBodyProps> = ({ offersList, o
 
   return (
     <>
-      <OfferTableHeader />
       <Table striped responsive hover bordered>
         <thead>
           <tr>

@@ -1,10 +1,10 @@
 import { rest } from "msw";
 
-import { OFFERS_API_URL } from "../../services/service-constants";
+import { BASE_CCC_API_URL } from "../../services/axios";
 import { GetOffersData } from "../mockData/offers";
 
 export const offerHandler = [
-  rest.get(OFFERS_API_URL, (req, res, ctx) => {
+  rest.get(`${BASE_CCC_API_URL}/offers`, (req, res, ctx) => {
     return res(ctx.json({ ...GetOffersData }));
   }),
 ];
