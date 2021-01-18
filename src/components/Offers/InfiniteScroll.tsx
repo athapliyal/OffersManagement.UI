@@ -73,7 +73,7 @@ export const InfiniteScroll: React.FC = () => {
   });
 
 
-  // Step 7: Write html and css and attach infinite scroll third party hook on line 89. So the same can be done for any html and css not the one below specifically
+  // Step 7: Write html and css and attach infinite scroll third party hook on line 91. So the same can be done for any html and css not the one below specifically
   // Check line 107. That's how you conditionally render components based on value of state 
   return (
     <div className="infinite-scroll-wrapper">
