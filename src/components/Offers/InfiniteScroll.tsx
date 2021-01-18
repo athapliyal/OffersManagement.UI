@@ -22,7 +22,7 @@ import { OfferSearchResults } from "../../models/OfferSearchResultsModel";
 // Step 2: Declare a function (this is JS ES6 syntax - new way of writing functions. Can be written in old way too). The React.FC part is for Typescript
 export const InfiniteScroll: React.FC = () => {
 
-  // Step 3: Create your state using useState. This returs the state and the function to update it. 
+  // Step 3: Create your state using useState. This returns the state and the function to update it. 
   // E.g. in below loading is a boolean with initial value of false. Whenever you have to update it just use setLoading function and pass in the new value
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -74,7 +74,7 @@ export const InfiniteScroll: React.FC = () => {
 
 
   // Step 7: Write html and css and attach infinite scroll third party hook on line 89. So the same can be done for any html and css not the one below specifically
-  // Check line 100. That's how you conditionally render components based on value of state 
+  // Check line 107. That's how you conditionally render components based on value of state 
   return (
     <div className="infinite-scroll-wrapper">
       <div className="infinite-scroll-header">
