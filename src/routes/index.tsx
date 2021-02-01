@@ -1,15 +1,4 @@
-import React, { Suspense, lazy } from 'react';
-
-import { Offers } from "../components/Offers";
-import { OfferDetails } from '../components/Offers/OfferDetails';
-import { NewOffer } from '../components/Offers/NewOffer';
-import { InfiniteScroll } from '../components/Offers/InfiniteScroll';
-import { BulkImportOffer } from "../components/BulkImportOffer";
-import { LoginScreen } from "../components/LoginScreen";
-import { Preloader } from '../components/Preloader';
-import { NotFound } from '../components/NotFound';
-
-const OfferCalendar = lazy(() => import('../components/OfferCalendar'));
+import { HomePage } from '../components/HomePage';
 
 interface IRoutes {
   path: string;
@@ -19,67 +8,19 @@ interface IRoutes {
   isPrivateRoute: boolean;
 }
 
-export const routes: IRoutes[] = [{
-  path: "/",
-  name: "Home",
-  exact: true,
-  component: () => <Offers />,
-  isPrivateRoute: true,
-},
-{
-  path: "/login",
-  name: "Login",
-  exact: false,
-  component: () => <LoginScreen />,
-  isPrivateRoute: false,
-},
-{
-  path: "/offers",
-  name: "Offers",
-  exact: true,
-  component: () => <Offers />,
-  isPrivateRoute: true,
-},
-{
-  path: "/offers/:id",
-  name: "OfferDetails",
-  exact: true,
-  component: () => <OfferDetails />,
-  isPrivateRoute: true,
-},
-{
-  path: "/bulk-import",
-  name: "Importer",
-  exact: true,
-  component: () => <BulkImportOffer />,
-  isPrivateRoute: true,
-},
-{
-  path: "/infinite-scroll",
-  name: "InfiniteScroll",
-  exact: true,
-  component: () => <InfiniteScroll />,
-  isPrivateRoute: true,
-},
-{
-  path: "/offer-calendar",
-  name: "OfferCalendar",
-  exact: true,
-  component: () => <Suspense fallback={<Preloader />}><OfferCalendar /></Suspense>,
-  isPrivateRoute: true,
-},
-{
-  path: "/new-offer",
-  name: "NewOffer",
-  exact: true,
-  component: () => <NewOffer />,
-  isPrivateRoute: true,
-},
-{
-  path: "",
-  name: "NotFound",
-  exact: false,
-  component: () => <NotFound />,
-  isPrivateRoute: false,
-},
+export const routes: IRoutes[] = [
+  {
+    path: "/",
+    name: "HomePage",
+    exact: true,
+    component: () => <HomePage />,
+    isPrivateRoute: false,
+  },
+  {
+    path: "/some-component",
+    name: "SomeComponent",
+    exact: true,
+    component: () => <h1>This is some component</h1>,
+    isPrivateRoute: false,
+  },
 ];

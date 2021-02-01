@@ -1,9 +1,0 @@
-// COMPONENT CONSTANTS
-export const OFFER_TABLE_HEADERS = [    
-    'TITLE',
-    'CATEGORY',
-    'DESCRIPTION',
-    'START DATE AND TIME',
-    'END DATE AND TIME',
-    'STATUS',
-    'ACTIONS'];
